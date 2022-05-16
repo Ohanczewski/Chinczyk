@@ -1,4 +1,7 @@
-﻿#include <SFML/Graphics.hpp>
+﻿#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> 
+#include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
@@ -11,6 +14,7 @@ int main()
 {
 
     //Init game
+    srand(time(NULL));
     Game game;
     game.initAll();
 
