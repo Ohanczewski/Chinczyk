@@ -12,7 +12,6 @@
 class Pawn
 {
 private:
-	sf::Texture pawnTexture;
 	sf::Sprite pawnSprite;
 	sf::Vector2f pawnPos;
 	Color colorType;
@@ -23,8 +22,7 @@ public:
 
 	//Functions
 	Pawn();
-	Pawn(sf::Vector2f pos, sf::Texture text, Color col, int pl);
-	Pawn(int x, int y, sf::Texture text, Color col, int pl);
+	Pawn(int x, int y, sf::Sprite spr, Color col, int pl);
 	~Pawn();
 	void renderPawn(sf::RenderWindow& window);
 };
