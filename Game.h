@@ -14,8 +14,8 @@ class Game
 private:
 
 	//Variables
-	int WIDTH = 920; //1280
-	int HEIGHT = 920; //720
+	int WIDTH = 980; //1280
+	int HEIGHT = 980; //720
 	sf::Event event;
 	sf::Vector2i mousePos;
 	int whichPlayer = 1;
@@ -26,8 +26,10 @@ private:
 
 	//Pawns
 	std::vector <Pawn> pawns;
-	int x1 = 75;
-	int y1 = 85;
+	sf::Texture pawnText;
+	sf::Sprite pawnSprite;
+	int x1 = 81;
+	int y1 = 95;
 
 	//Gameplay
 	int diceRoll;

@@ -44,35 +44,33 @@ void Game::initWindow()
 void Game::initTextures() 
 {
 	backgroundTexture.loadFromFile("assets/textures/background.png");
-	backgroundTexture.setSmooth(true);
 	backroundSprite.setTexture(backgroundTexture);
-	backroundSprite.setScale(sf::Vector2f(0.898f, 0.898f));
 }
 
 void Game::initPawns()
 {
-	//Red ones
-	sf::Texture pawnText;
-	pawnText.loadFromFile("assets/textures/pawnTexture.jpg");
-	pawns.emplace_back(Pawn(x1, y1, pawnText, Color::RED, 1));
-	pawns.emplace_back(Pawn(x1 + 80, y1, pawnText, Color::RED, 1));
-	pawns.emplace_back(Pawn(x1, y1 + 80, pawnText, Color::RED, 1));
-	pawns.emplace_back(Pawn(x1 + 80, y1 + 80, pawnText, Color::RED, 1));
+	pawnText.loadFromFile("assets/textures/pawnTexture.png");
+	pawnSprite.setTexture(pawnText);
+	pawns.emplace_back(Pawn(x1, y1, pawnSprite, Color::RED, 1));
+	pawns.emplace_back(Pawn(x1 + 82, y1, pawnSprite, Color::RED, 1));
+	pawns.emplace_back(Pawn(x1, y1 + 82, pawnSprite, Color::RED, 1));
+	pawns.emplace_back(Pawn(x1 + 82, y1 + 82, pawnSprite, Color::RED, 1));
 
-	pawns.emplace_back(Pawn(x1 + 690, y1, pawnText, Color::BLUE, 2));
-	pawns.emplace_back(Pawn(x1 + 690 + 80, y1, pawnText, Color::BLUE, 2));
-	pawns.emplace_back(Pawn(x1 + 690, y1 + 80, pawnText, Color::BLUE, 2));
-	pawns.emplace_back(Pawn(x1 + 690 + 80, y1 + 80, pawnText, Color::BLUE, 2));
+	pawns.emplace_back(Pawn(x1 + 735, y1, pawnSprite, Color::BLUE, 2));
+	pawns.emplace_back(Pawn(x1 + 735 + 82, y1, pawnSprite, Color::BLUE, 2));
+	pawns.emplace_back(Pawn(x1 + 735, y1 + 82, pawnSprite, Color::BLUE, 2));
+	pawns.emplace_back(Pawn(x1 + 735 + 82, y1 + 82, pawnSprite, Color::BLUE, 2));
 
-	pawns.emplace_back(Pawn(x1, y1 + 690, pawnText, Color::YELLOW, 3));
-	pawns.emplace_back(Pawn(x1 + 80, y1 + 690, pawnText, Color::YELLOW, 3));
-	pawns.emplace_back(Pawn(x1, y1 + 690 + 80, pawnText, Color::YELLOW, 3));
-	pawns.emplace_back(Pawn(x1 + 80, y1 + 690 + 80, pawnText, Color::YELLOW, 3));
+	pawns.emplace_back(Pawn(x1, y1 + 735, pawnSprite, Color::YELLOW, 3));
+	pawns.emplace_back(Pawn(x1 + 82, y1 + 735, pawnSprite, Color::YELLOW, 3));
+	pawns.emplace_back(Pawn(x1, y1 + 735 + 82, pawnSprite, Color::YELLOW, 3));
+	pawns.emplace_back(Pawn(x1 + 82, y1 + 735 + 82, pawnSprite, Color::YELLOW, 3));
 
-	pawns.emplace_back(Pawn(x1 + 690, y1 + 690, pawnText, Color::GREEN, 4));
-	pawns.emplace_back(Pawn(x1 + 690 + 80, y1 + 690, pawnText, Color::GREEN, 4));
-	pawns.emplace_back(Pawn(x1 + 690, y1 + 690 + 80, pawnText, Color::GREEN, 4));
-	pawns.emplace_back(Pawn(x1 + 690 + 80, y1 + 690 + 80, pawnText, Color::GREEN, 4));
+	pawns.emplace_back(Pawn(x1 + 735, y1 + 735, pawnSprite, Color::GREEN, 4));
+	pawns.emplace_back(Pawn(x1 + 735 + 82, y1 + 735, pawnSprite, Color::GREEN, 4));
+	pawns.emplace_back(Pawn(x1 + 735, y1 + 735 + 82, pawnSprite, Color::GREEN, 4));
+	pawns.emplace_back(Pawn(x1 + 735 + 82, y1 + 735 + 82, pawnSprite, Color::GREEN, 4));
+	
 }
 
 void Game::updateMousePos()
@@ -170,7 +168,6 @@ void Game::render()
 
 	//Rendering things
 	window->draw(backroundSprite);
-	//std::cout << mousePos << std::endl;
 
 	//Rendering pawns
 	for (auto& i : pawns) {
